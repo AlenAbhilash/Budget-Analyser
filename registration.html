@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<script src="https://cdn.tailwindcss.com"></script>
+
+<body class="bg-black">
+    <!-- mainhead -->
+    <h1 class=" font-sans text-transparent bg-clip-text bg-white font-bold text-2xl w-auto text-center 
+    to-slate-700 md:text-5xl m-[50px] md:mt-[80px] md:w-[565px] h-auto md:ms-[500px]">
+        Create an Account for Budget Analyzer</h1>
+    <!-- mainheadends  -->
+    <!-- backgroundcolor -->
+    <div class="circlePosition bg-gradient-to-r  from-blue-300 via-blue-600 to-indigo-600
+    w-[60%] h-[500px] rounded-[100%] blur-[90px] relative left-[24%] top-[40%]">
+    </div>
+    <!-- backgroundcolorends -->
+    <!-- main transparent -->
+    <div class="md:flex md:flex-wrap md:space-x-10  absolute top-[10%] left-[10%] space-y-5 w-auto h-auto md:top-[25%] blurtext mt-[50px]
+    bg-[white]/40 z-10 md:left-[30%] md:w-auto md:h-[auto] md:ps-[100px] p-10 rounded-3xl">
+        <div class="w-auto h-auto flex flex-wrap flex-col space-y-4">
+            <label for="" class="text-2xl text-slate-200 font-semibold">Enter User Name</label>
+
+            <input type="text" name="name" id="username"
+                class="block w-full rounded-md border-0 py-1.5 text-gray-900
+                 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+
+            <label for="" class="text-2xl text-slate-200 font-semibold">Enter Email </label>
+
+            <input type="text" name="name" id="email"
+                class="block w-full rounded-md border-0 py-1.5 text-gray-900
+                 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+
+            <label for="" class="text-2xl text-slate-200 font-semibold">Enter Password</label>
+
+            <input type="text" name="PassWord" id="password"
+                class="block w-full rounded-md border-0 py-1.5
+             text-gray-900 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+
+            <button type="button" class="h-10 w-32 m-[10px] items-center rounded-full 
+            bg-gradient-to-r from-blue-300 via-blue-600 to-indigo-600 p-[1.5px]
+             text-white" onclick="register()">
+                <div class="flex h-full w-full items-center justify-center rounded-full bg-gray-900">
+                    <i class="fas fa-paper-plane icon"></i>Submit
+                </div>
+            </button>
+        </div>
+        <div>
+            <img src="https://images.pexels.com/photos/6694964/pexels-photo-6694964.jpeg?auto=compress&cs=tinysrgb&w=600"
+                alt=""
+                class="md:w-[300px] md:h-[300px] object-cover w-[200px] h-[200px] rounded-3xl transition-all ease-in-out hover:w-[360px]">
+        </div>
+    </div>
+    <!-- main transparent ends -->
+</body>
+<script src="registration.js"></script>
+
+</html>

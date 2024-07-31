@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+</head>
+
+<body class="bg-black w-full">
+    <!-- navbar -->
+    <nav class="w-full flex-col flex-wrap justify-items-end md:text-end md:justify-end p-[10px]">
+        <button type="button"
+            class="h-10 w-32 m-[10px] items-center rounded-full bg-gradient-to-r from-blue-300 via-blue-600 to-indigo-600 p-[1.5px] text-white"
+            onclick="logout()">
+            <div class="flex h-full w-full items-center justify-center rounded-full bg-gray-900">Log Out</div>
+        </button>
+        <h1 class="text-white font-sans text-xl" id="emaildisplay"></h1>
+    </nav>
+    <!-- navbar ends -->
+    <!-- mainhead -->
+    <h1 class=" w-full ms-10 font-sans text-transparent bg-clip-text bg-white font-bold text-2xl 
+     text-center mt-10 md:mt-0 to-slate-700 md:text-5xl m-[8px] md:w-[600px] h-auto md:ms-[500px]"
+        id="usernamedisplay"></h1>
+    <!-- mainhead ends -->
+    <!-- background color -->
+    <div
+        class="circlePosition bg-gradient-to-r from-blue-300 via-blue-600 to-indigo-600 w-[80%] h-[700px] rounded-[100%] blur-[150px] relative left-[10%] top-[30%]">
+    </div>
+    <!-- background color ends -->
+    <!-- main transparent -->
+    <div
+        class="ms-[100px] absolute top-[30%] left-[8%] flex flex-wrap space-y-5 md:space-y-0 md:space-x-5 md:mt-10 md:ms-[400px]">
+        <div class="bg-gradient-to-r from-blue-400 via-blue-600 to-indigo-500 w-auto p-7 rounded-lg">
+            <h1 class="text-white font-sans text-2xl p-2 font-bold">Total Balance</h1>
+            <h1 class="text-white font-sans text-2xl p-2 font-bold" id="totalbalance">Add</h1>
+        </div>
+        <div class="bg-gradient-to-r from-blue-400 via-blue-600 to-indigo-500 w-auto p-7 rounded-lg">
+            <h1 class="text-white font-sans text-2xl p-2 font-bold">Total Expense</h1>
+            <h1 class="text-white font-sans text-2xl p-2 font-bold" id="dExpensebalance">Add</h1>
+        </div>
+    </div>
+    <div
+        class="my-4 absolute top-[73%] left-[20%] md:top-[53%] md:left-[21%] flex flex-wrap space-y-6 md:space-y-0 md:space-x-5 md:mt-10">
+        <div class="p-[20px] bg-[white]/40 z-10 w-auto h-3/6 md:p-[40px] rounded-3xl md:rounded-2xl">
+            <div class="w-auto h-auto flex flex-wrap flex-col space-y-4">
+                <label for="" class="text-2xl text-slate-200 font-semibold text-center">Add Income</label>
+                <input type="text" name="name" id="incometype"
+                    class="block w-[270px] md:w-[350px] rounded-md border-0 py-1.5 text-gray-900 placeholder:text-gray-400 ps-2 text-md"
+                    placeholder="Income Type">
+                <input type="text" name="name" id="incomeamount"
+                    class="block w-[270px] md:w-[350px] rounded-md border-0 py-1.5 text-gray-900 placeholder:text-gray-400 ps-2 text-md"
+                    placeholder="Enter Amount">
+                <button type="button"
+                    class="h-10 w-32 m-[10px] items-center rounded-full bg-gradient-to-r from-blue-300 via-blue-600 to-indigo-600 p-[1.5px] text-white"
+                    onclick="addincome()">
+                    <div class="flex h-full w-full items-center justify-center rounded-full bg-gray-900">Add Income
+                    </div>
+                </button>
+            </div>
+        </div>
+        <div class="p-[20px] bg-[white]/40 z-10 w-auto h-3/6 md:p-[40px] md:rounded-2xl rounded-3xl">
+            <div class="w-auto h-auto flex flex-wrap flex-col space-y-4">
+                <label for="" class="text-2xl text-slate-200 font-semibold text-center">Add Expense</label>
+                <input type="text" name="name" id="Expensetype"
+                    class="block w-[270px] md:w-[350px] rounded-md border-0 py-1.5 text-gray-900 placeholder:text-gray-400 ps-2 text-md"
+                    placeholder="Expense Type">
+                <input type="text" name="name" id="Expenseamount"
+                    class="block w-[270px] md:w-[350px] rounded-md border-0 py-1.5 text-gray-900 placeholder:text-gray-400 ps-2 text-md"
+                    placeholder="Enter Amount">
+                <button type="button"
+                    class="h-10 w-32 m-[10px] items-center rounded-full bg-gradient-to-r from-blue-300 via-blue-600 to-indigo-600 p-[1.5px] text-white"
+                    onclick="Expense()">
+                    <div class="flex h-full w-full items-center justify-center rounded-full bg-gray-900">Add Expense
+                    </div>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="top-[135%] left-[47%] my-4 absolute md:top-[94%] md:left-[47%]">
+        <button type="button"
+            class="h-10 w-32 m-[10px] items-center rounded-full bg-gradient-to-r from-blue-300 via-blue-600 to-indigo-600 p-[1.5px] text-white"
+            onclick="deleteaccount()">
+            <div class="flex h-full w-full items-center justify-center rounded-full bg-gray-900">Delete Account
+            </div>
+        </button>
+    </div>
+    <h1
+        class="hidden md:block top-[200%] text-white text-center md:top-[106%] md:left-[38%] absolute text-4xl font-bold">
+        Income and Expense Details</h1>
+    <!-- main transparent ends -->
+    <div class="ms-2 mt-[350px] w-auto space-y-10 flex flex-wrap md:space-x-8 md:ms-[285px] md:mt-0 md:space-y-0">
+        <table class="md:w-auto text-sm text-left text-gray-500 dark:text-gray-400 rounded-lg">
+            <caption
+                class="p-5 text-lg font-semibold text-left rtl:text-right text-gray-900 bg-white dark:text-white dark:bg-gray-800 rounded-t-lg">
+                Income</caption>
+            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 rounded-t-lg">
+                <tr>
+                    <th scope="col" class="px-6 py-3">Type</th>
+                    <th scope="col" class="px-6 py-3">Amount</th>
+                    <th scope="col" class="px-6 py-3">Balance</th>
+                    <th scope="col" class="px-6 py-3">Date&Time</th>
+                </tr>
+            </thead>
+            <tbody id="tbody1">
+
+            </tbody>
+        </table>
+        <table class="md:w-auto text-sm text-left text-gray-500 dark:text-gray-400 rounded-lg">
+            <caption
+                class="p-5 text-lg font-semibold text-left rtl:text-right text-gray-900 bg-white dark:text-white dark:bg-gray-800 rounded-t-lg">
+                Expense</caption>
+            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 rounded-t-lg">
+                <tr>
+                    <th scope="col" class="px-6 py-3">Type</th>
+                    <th scope="col" class="px-6 py-3">Amount</th>
+                    <th scope="col" class="px-6 py-3">Balance</th>
+                    <th scope="col" class="px-6 py-3">Date&Time</th>
+                </tr>
+            </thead>
+            <tbody id="tbody2">
+
+
+            </tbody>
+        </table>
+    </div>
+    <h1 class="text-white text-center my-4 mt-14 text-4xl font-bold">Expense Pie-Chart</h1>
+    <div class="text-center">
+        <button type="button"
+            class="h-10 w-32 m-[10px] items-center rounded-full bg-gradient-to-r from-blue-300 via-blue-600 to-indigo-600 p-[1.5px] text-white"
+            onclick="showChart()">
+            <div class="flex h-full w-full items-center justify-center rounded-full bg-gray-900">Show Pie-Chart</div>
+        </button>
+    </div>
+    <div id="chartcontainer" style="display: none;"
+        class="ms-8 my-10 md:ms-[440px] max-w-2xl h-auto w-full bg-white rounded-lg shadow dark:bg-gray-800 p-4 md:p-6 justify-center align-middle text-center">
+        <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white me-1 underline"> Pie-chart
+            Expense
+        </h5>
+        <div class="py-6" id="pie-chart"></div>
+    </div>
+</body>
+
+<script src="home.js"></script>
+
+</html>
